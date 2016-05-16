@@ -95,3 +95,6 @@ bind-key a set-window-option synchronize-panes
 
 # send the prefix to client inside window
 bind-key -n C-a send-prefix
+
+# tmux-resurrect plugin
+run-shell /Users/brunow/Development/tmux-resurrect/resurrect.tmux
