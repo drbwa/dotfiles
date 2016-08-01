@@ -98,3 +98,6 @@ bind-key -n C-a send-prefix
 
 # tmux-resurrect plugin
 run-shell /Users/brunow/Development/tmux-resurrect/resurrect.tmux
+
+# increase history limit
+set-option -g history-limit 5000
