@@ -5,6 +5,9 @@ SB_YELLOW="\[\033[1;33m\]"
 SB_NOCOLOR="\[\033[0m\]"
 export PS1="$SB_GREEN\u@$SB_BLUE\h:$SB_YELLOW\W$ $SB_NOCOLOR "
 
+# bash completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -21,5 +24,8 @@ alias java10='export JAVA_HOME=$JAVA_10_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java12='export JAVA_HOME=$JAVA_12_HOME'
 
-# default to Java 12
-java12
+# default to Java 11
+java11
+
+# take python from homebrew
+alias python=/usr/local/bin/python3
