@@ -70,7 +70,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git osx zsh-autosuggestions zsh-syntax-highlighting brew)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,15 +124,26 @@ alias python=/usr/local/bin/python3
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/Users/brunow/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/Users/brunow/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/Users/brunow/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/Users/brunow/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
+__conda_setup="$('/Users/brunow/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/brunow/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/brunow/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/brunow/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
+
+# Apache Spark 2.3.2
+export SPARK_HOME=/usr/local/Cellar/apache-spark@2.3.2/2.3.2/libexec
+export PYTHONPATH=/usr/local/Cellar/apache-spark@2.3.2/2.3.2/libexec/python/:$PYTHONPATH
+
+# Some useful key bindings
+# Accept suggestion by using a more convenient key (stay on home row)
+ bindkey "^j" autosuggest-accept
+
+# Move one word forward in autosuggest using CTRL + w
+ bindkey "^w" forward-word
