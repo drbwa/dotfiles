@@ -125,6 +125,9 @@ alias python=/usr/local/bin/python3
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 6b072d5d436be2d7533320c6af9bc110db9e465d
 __conda_setup="$('/Users/brunow/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -144,7 +147,7 @@ export PYTHONPATH=/usr/local/Cellar/apache-spark@2.3.2/2.3.2/libexec/python/:$PY
 
 # Some useful key bindings
 # Accept suggestion by using a more convenient key (stay on home row)
-bindkey "'" autosuggest-accept
+ bindkey "^j" autosuggest-accept
 
 # Move one word forward in autosuggest using CTRL + w
-bindkey "^w" forward-word
+ bindkey "^w" forward-word
