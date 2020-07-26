@@ -1,0 +1,10 @@
+// Place your key bindings in this file to override the defaults
+[
+    // Toggle between terminal and editor focus
+    { "key": "ctrl+`", "command": "workbench.action.terminal.focus"},
+    { "key": "ctrl+`", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus"},
+
+    // Toggle between explorer and editor focus
+    { "key": "ctrl+e", "command": "workbench.files.action.focusFilesExplorer"},
+    { "key": "ctrl+e", "command": "workbench.action.focusActiveEditorGroup", "when": "filesExplorerFocus"}
+]
