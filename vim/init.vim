@@ -2,7 +2,7 @@
 " maximum ling length; longer lines will be wrapped onto a new line i.e. a hard
 " wrap as opposed to a soft one this displays long lines well in any editor.
 " :set textwidth=80
-set textwidth=0
+set textwidth=80
 set wrapmargin=0
 " display colored bar in column
 set colorcolumn=80
