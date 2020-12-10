@@ -1,8 +1,15 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/brunow/.oh-my-zsh"
+export ZSH="/Users/bruno/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -10,7 +17,8 @@ export ZSH="/Users/brunow/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -124,26 +132,30 @@ alias python=/usr/local/bin/python3
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/brunow/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/bruno/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/brunow/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/brunow/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/bruno/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/bruno/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/brunow/anaconda3/bin:$PATH"
+        export PATH="/Users/bruno/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# Apache Spark 2.3.2
-export SPARK_HOME=/usr/local/Cellar/apache-spark@2.3.2/2.3.2/libexec
-export PYTHONPATH=/usr/local/Cellar/apache-spark@2.3.2/2.3.2/libexec/python/:$PYTHONPATH
-
 # Some useful key bindings
 # Accept suggestion by using a more convenient key (stay on home row)
- bindkey "^j" autosuggest-accept
+bindkey "^j" autosuggest-accept
 
 # Move one word forward in autosuggest using CTRL + w
- bindkey "^w" forward-word
+bindkey "^w" forward-word
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/bruno/.sdkman"
+[[ -s "/Users/bruno/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/bruno/.sdkman/bin/sdkman-init.sh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
