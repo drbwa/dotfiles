@@ -1,6 +1,6 @@
 # linux dotfiles
 
-## Installing a barebones oh-my-zsh on Ubuntu 20.04
+## Installing a bare-bones oh-my-zsh on Ubuntu 20.04
 
 ```bash
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
