@@ -9,20 +9,17 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/bruno/.oh-my-zsh"
+export ZSH="/Users/user/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
-#ZSH_THEME="powerlevel9k/powerlevel9k"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -43,7 +40,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -55,6 +52,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -74,11 +73,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx zsh-autosuggestions zsh-syntax-highlighting brew)
+plugins=(git osx brew docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,55 +106,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-# set up JAVA_HOMEs and JDK aliases
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_9_HOME=$(/usr/libexec/java_home -v9)
-export JAVA_10_HOME=$(/usr/libexec/java_home -v10)
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-export JAVA_12_HOME=$(/usr/libexec/java_home -v12)
-
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java9='export JAVA_HOME=$JAVA_9_HOME'
-alias java10='export JAVA_HOME=$JAVA_10_HOME'
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
-alias java12='export JAVA_HOME=$JAVA_12_HOME'
-
-# default to Java 11
-java11
-
-# take python from homebrew
-alias python=/usr/local/bin/python3
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/bruno/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/bruno/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/bruno/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/bruno/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# Some useful key bindings
-# Accept suggestion by using a more convenient key (stay on home row)
-bindkey "^j" autosuggest-accept
-
-# Move one word forward in autosuggest using CTRL + w
-bindkey "^w" forward-word
-
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/bruno/.sdkman"
-[[ -s "/Users/bruno/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/bruno/.sdkman/bin/sdkman-init.sh"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/user/.sdkman"
+[[ -s "/Users/user/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/user/.sdkman/bin/sdkman-init.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
