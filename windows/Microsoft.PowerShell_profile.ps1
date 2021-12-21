@@ -6,3 +6,15 @@ Set-PSRepository -name PSGallery -InstallationPolicy Trusted
 
 # install Windows Terminal Icons
 Import-Module -Name Terminal-Icons
+
+Import-Module posh-git
+
+# Improved history search. 
+# If command line is blank, up and down arrow just cycle through history.
+# If command line has some text, will search history for entries that start with
+# the text.
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+# enable tab completion
+Set-PSReadLineKeyHandler -Key Tab -Function Complete
