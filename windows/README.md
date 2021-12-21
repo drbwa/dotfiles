@@ -41,7 +41,20 @@ Import-Module -Name Terminal-Icons
 ## Git with SSH keys
 
 That's an entire adventure for another time. Need to enable OpenSSH service. 
-Need to install Git for Windows. Need to set `$GIT_SSH` to your OpenSSH executable.
+Need to install Git for Windows. Need to set `$GIT_SSH` to your OpenSSH
+executable.
+
+Enable OpenSSH (comes installed with Windows 10):
+
+```
+Settings --> Manage Optional Features --> OpenSSH client
+```
+
+There is one more step to get the ssh-agent to run by default.
+
+```
+Services --> OpenSSH Authentication Agent --> Startup Type: Automatic (Delayed Start)
+```
 
 ```powershell
 $SSHPath = (Get-Command -Name ‘ssh.exe’).Source
