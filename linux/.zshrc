@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/vagrant/.oh-my-zsh"
+export ZSH="/home/bruno/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting Copydir Copyfile)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting copypath copyfile jsontools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,5 +121,5 @@ export LANG=en_US.UTF-8
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/vagrant/.sdkman"
-[[ -s "/home/vagrant/.sdkman/bin/sdkman-init.sh" ]] && source "/home/vagrant/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/home/bruno/.sdkman"
+[[ -s "/home/bruno/.sdkman/bin/sdkman-init.sh" ]] && source "/home/bruno/.sdkman/bin/sdkman-init.sh"

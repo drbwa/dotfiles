@@ -3,6 +3,8 @@
 ## Installing a bare-bones oh-my-zsh on Ubuntu 20.04
 
 ```bash
+sudo apt-get install -y zsh
+
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 sudo apt-get install -y powerline fonts-powerline
